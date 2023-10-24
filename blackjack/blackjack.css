@@ -16,18 +16,15 @@ body{
     
 }
 
- #topNav{
+#topNav{
     border:1px dotted black;
     border-radius: 22px;
     /* position:relative; */
     float: left;    
     background-color:aquamarine;
     
-    
-    
-    
-
 } 
+
 #topNav a{
     
     text-decoration: none;
@@ -94,5 +91,4 @@ h1{
     cursor: pointer;
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
-   
 }
