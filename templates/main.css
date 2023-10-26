@@ -3,21 +3,23 @@
     flex-direction: row;
     flex-flow: row wrap;
     justify-content: space-between;
-
-    background-color: #283424;
-
-    border-style: solid;
-    border-radius: 50px;
-    border-color: #183725;
-    border-width: 5px;
+    background-color: #193725;
+    background-image: linear-gradient(#193725, #1f432d); /* Dawood - added gradient to make it look aesthetically pleasing */
+    
     box-shadow: 0px 5px 10px #000000;
     
+    border-radius: 50px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #193725; 
+
     width: 100%;
-    height: 100px; /* Set the fixed height of the navbar here */
+    height: 90px; 
+    margin-top: -40px;
+    /* Dawood- slight changes made to hieght and
+     added margin to make it look more like wireframe */
     align-items: center;
 }
-
-
 
 
 .navItem {
@@ -29,13 +31,46 @@
 #nav{
     border-style: solid;
     border-radius: 50px;
-    border-color: #264130;
+    border-color: #305A4166;
+    background-color: rgb(38,65,48, 0.8); /* Dawood- added this to mkae it look better */
     border-width: 5px;
     align-items: center;
     height: 50%;
-    margin-bottom: 5px;
-
+    margin-bottom: 25px;
+    box-shadow:  0 2px 15px  #000000;
+    /* changed a few styles to make it look more wireframe accurate  */
 }
+
+
+
+/* branch NavBar - changes added by Dawood- START  */
+
+.button {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 10px;
+    
+}
+
+.button img {
+    width: 32px;
+    height: 32px;
+    border: none;
+    text-decoration: none;
+}
+
+.button:hover  {
+    color: rgb(229, 0, 0);
+  background-color: rgba(0, 255, 55, 0.02);
+  border-radius: 20000px;
+}
+
+
+/* branch NavBar - changes added by Dawood- END  */
+
+
+
+
 
 .navItem img {
     max-height: 90%; /* Set a maximum height */
@@ -44,15 +79,40 @@
 
 .navItem:first-child {
     margin-left: 10px;
+    margin-top: -15px;
+    width: 150px;
+    height: 127px;
+    /* Dawood - made changes here margin and size*/
 }
+
 .navItem:last-child{
-    margin-right: 10px;
+    margin-right: 20px;
+    margin-top: -11px;
+    width: 60px;
+    height: 70px;
+    /* Dawood - made changes here margin and size*/
 }
 
-
-
+.Title {
+    font-size: 30px;
+}
 
 body{
     margin-top: 10vh;
-    background-color: #4b6856;
+    background-color: rgb(43, 84, 61);
+}
+
+.Title {
+    font-size: 20px;    
+    font-weight: 600;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    letter-spacing: 1.5px;
+    color: rgb(181, 215, 179, 0.3);
+    text-shadow: 0px 5px 10px #000000;
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    margin-left: -475px;
+    margin-right: -20px;
+
 }
