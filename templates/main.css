@@ -48,7 +48,9 @@
 .button {
     display: inline-block;
     padding: 10px;
-    margin: 0 10px;
+    margin: 0 15px;
+    background-color: rgb(0, 0, 0, 0.0);
+    border: none;
     
 }
 
@@ -66,6 +68,8 @@
 }
 
 
+
+
 /* branch NavBar - changes added by Dawood- END  */
 
 
@@ -80,21 +84,17 @@
 .navItem:first-child {
     margin-left: 10px;
     margin-top: -15px;
-    width: 150px;
+    width: 0 auto;
     height: 127px;
     /* Dawood - made changes here margin and size*/
 }
 
 .navItem:last-child{
-    margin-right: 17px;
-    margin-top: -11px;
-    width: 60px;
+    margin-right: 18px;
+    margin-top: -9px;
+    width: 0 auto;
     height: 70px;
     /* Dawood - made changes here margin and size*/
-}
-
-.Title {
-    font-size: 30px;
 }
 
 body{
@@ -103,17 +103,20 @@ body{
 }
 
 .Title {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 600;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 1.5px;
     color: rgb(181, 215, 179, 0.3);
     text-shadow: 0px 5px 10px #000000;
     text-align: center;
-    position: sticky; /* Set the position to sticky */
-    top: 0; /* Stick to the top of the .topNav */
+     /* Set the position to sticky */
+     position: sticky;
+
     z-index: 1;
-    margin-left: -475px;
+    margin-left: 0px;
+    margin-top: -70px;
+    margin-bottom: 50px;
 
 }
 
