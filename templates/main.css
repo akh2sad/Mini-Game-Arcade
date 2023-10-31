@@ -103,16 +103,31 @@ body{
 }
 
 .Title {
-    font-size: 20px;    
+    font-size: 20px;
     font-weight: 600;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 1.5px;
     color: rgb(181, 215, 179, 0.3);
     text-shadow: 0px 5px 10px #000000;
     text-align: center;
-    margin-top: -15px;
-    margin-bottom: 10px;
-    margin-left: -750px;
-    margin-right: -100px;
+    position: sticky; /* Set the position to sticky */
+    top: 0; /* Stick to the top of the .topNav */
+    z-index: 1;
+    margin-left: -475px;
 
+}
+
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .topNav {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+    
+    .Title {
+        margin-left: 0; /* Remove the margin on smaller screens */
+        margin-top: 10px; /* Add space between the logo and title */
+    }
 }
