@@ -73,7 +73,7 @@ transition: border-color 0.3s;}
 
 #guessInput:focus {
 border-color: #007bff;
-background-image: url("https://wallpapers.com/images/hd/aesthetic-pixel-art-garden-at-night-0ax4fopcqzot21lj.jpg");
+background-image: url("Assets/input button img.jpg");
 background-size:cover;
 border-radius: 4px;
 border-top-left-radius: 15px;
