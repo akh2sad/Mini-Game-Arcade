@@ -6,7 +6,7 @@ body{
     background-color:rgb(174, 181, 181) ;
     transition: background-color 0.9s, color 0.3s ,
     font-size 0.9s, color 0.5s;
-    background-image: url("/Users/dawood/Downloads/cutcube.png");
+    background-image: url("Assets/cutcube.png");
     background-repeat: repeat; 
     background-attachment: fixed;
 }
