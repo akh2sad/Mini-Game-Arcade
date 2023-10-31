@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Number Guesser Game</title>
+    <link rel="stylesheet" type="text/css" href="numG.css"/>
+</head>
+
+<body id="body">
+    <h1>Number Guesser Game</h1>
+    <p>guess a number between 0 and 100</p>
+    <input type="number" id="guessInput">
+    <button id="submitGuess"> Submit Guess</button>
+    <p  id="message" class="message"></p>
+    <button id="playAgainButton">Play Again!</button>
+
+
+<!-- This is the java script to make the site functioning -->
+        <script>
+            let playAgain;
+            const x = "no";
+            let randomNumber = Math.round(Math.random() * 100);
+            let guessedNumber;
+////
+            function displayMessage(message) 
+            { document.getElementById('message').textContent = message; }
+        
+//// this function checks if the number is correct and displays the message accordingly 
+            function checkGuess()  
+            {
+                if (guessedNumber === randomNumber) 
+                    {
+                        displayMessage(`${guessedNumber} is correct!`);
+
+                        setTimeout(() =>{ document.getElementById('playAgainButton').style.display = 'block';}, 2700);
+
+                    } 
+                else 
+                    {
+                        let temp = guessedNumber - randomNumber;
+                        if (temp <= 2 && temp >= -2) 
+                        {displayMessage("You are getting extremely warm.");} 
+
+                        else if (temp <= 5 && temp >= -5) 
+                        {displayMessage("You are getting very warm.");}
+
+                        else if (temp <= 10 && temp >= -10) 
+                        {displayMessage("You are getting warmer.");} 
+
+                        else {displayMessage("You are cold.");}
+                    }
+            }
+/// this part checks if the input is valid
+            document.getElementById('submitGuess').addEventListener
+            ('click', () => 
+                {
+                    guessedNumber = parseInt(document.getElementById('guessInput').value, 10);
+                    document.getElementById('guessInput').value = '';
+
+                    if (guessedNumber <= -1 || guessedNumber >= 101) 
+                         {displayMessage("Invalid number.");} 
+
+                    else if (isNaN(guessedNumber)) 
+                        {displayMessage("Invalid input! Please choose a number.");} 
+
+                    else {checkGuess();}
+                }
+                );
+//// this part makes the play again function 
+            document.getElementById('playAgainButton').addEventListener('click', () => { resetGame(); });
+
+            function resetGame() 
+                 {
+                    guessedNumber = null;
+                    displayMessage("Guess a number between 0 and 100:");
+                    randomNumber = Math.round(Math.random() * 100);
+                    playAgain = null;
+                    document.getElementById('playAgainButton').style.display = 'none'; // Hide the "Play Again" button
+                 }
+        </script>
+</body>
+</html>
+
+
+
+
+<!-- function checkGuess() {
+                    if (guessedNumber === randomNumber) {
+                        displayMessage(`${guessedNumber} is correct!`);
+                        setTimeout(() => { 
+                    displayMessage("Want to play again? Send: ok or send: no");
+                    displayPlayAgainButton();
+                }, 2000)                      
+                    }  -->
