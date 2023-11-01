@@ -9,14 +9,14 @@
     <div class="topNav">
 
         <div class ="navItem" id="logo">
-            <img src="../assets/LOGO.png">
+            <img id="logoImage" src="">
         </div>
 
         <div class="navItem" id="nav">
-            <a href="#home" class="button home-button"><img src="../assets/Home-icon.png" alt="Home"><span class="popup">Home</span></a>
+            <a href="#home" class="button home-button" id="homeClick" ><img src="../assets/Home-icon.png" alt="Home"><span class="popup">Home</span></a>
 
             <div class="game-dropdown">
-                <button href="#games" class="button game-button"><img src="../assets/game-icon.png" alt="Games"><!-- <span class="popup">Games</span> --></button>
+                <button href="#games" class="button game-button" ><img src="../assets/game-icon.png" alt="Games"><!-- <span class="popup">Games</span> --></button>
                
                 <div class="game-dropdown-content">
 
@@ -44,14 +44,35 @@
                 
             </div>
 
-            <a href="#contact" class="button contact-button"><img src="../assets/contact-icon.png" alt="Contact"><span class="popup">Contact</span></a>
-            <a href="#leaderboard" class="button leaderboard-button"><img src="../assets/leaderboardicon.png" alt="leaderboard"><span class="popup">Leaderboard</span></a>
+            <a href="#contact" class="button contact-button" id="contactClick"><img src="../assets/contact-icon.png" alt="Contact"><span class="popup">Contact</span></a>
+            <a href="#leaderboard" class="button leaderboard-button" id="leaderboardClick"><img src="../assets/leaderboardicon.png" alt="leaderboard"><span class="popup">Leaderboard</span></a>
         </div>
 
         <div class="navItem" id="signOut">
-            <a href="#signOut" class="signOut-button"><img src="../assets/login-icon.png"></a>
+            <a href="#signOut" class="signOut-button"  id="signOutClick"><img src="../assets/login-icon.png"></a>
         </div>
         
     </div>
+    
+<!-- the below script is to randomly change the logo img -->
+        <script>
+        
+            // Array of possible logo image sources
+            var logoImages = [
+                "../assets/cyndaquil-alt-giflogo.gif" ,
+                "../assets/bulbasaur-alt0giflogo.gif",
+                "../assets/machamp-alt-giflogo.gif",
+                "../assets/starter-alt-giflogo.gif",
+
+            ];
+            // Select a random image source from the array
+            var randomImageIndex = Math.floor(Math.random() * logoImages.length);
+            var randomImageSource = logoImages[randomImageIndex];
+
+            // Update the src attribute of the logo image element
+            document.getElementById("logoImage").src = randomImageSource;
+            
+        </script>
+
 </body>
 </html>

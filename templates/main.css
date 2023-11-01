@@ -7,8 +7,10 @@
     background-color: #193725; /* Background color */
     background-image: linear-gradient(#193725, #1f432d); /* Gradient background */
     
-    box-shadow: 0px 5px 10px #000000; /* Add shadow for a visual effect */
-    
+    box-shadow:  37px 37px 45px #12281b,
+                 -37px -37px 45px rgb(32, 70, 47);/* Add shadow for a visual effect */
+
+
     border-radius: 50px; /* Round the corners */
     border-width: 3px;
     border-style: solid; /* Solid border style */
@@ -18,6 +20,8 @@
     height: 90px; /* Set the height of the navigation bar */
     margin-top: -40px; /* Adjust the margin to fine-tune the layout */
     align-items: center; /* Center items vertically */
+    z-index: 4;
+    
 }
 
 
@@ -37,7 +41,7 @@
     border-width: 5px; /* Border width */
     align-items: center; /* Center items vertically */
     height: 50%; /* Set the height to 50% */
-    margin-bottom: 25px; /* Adjust the margin to fine-tune the layout */
+    margin-bottom: 5px; /* Adjust the margin to fine-tune the layout */
     box-shadow: 0 2px 15px #000000; /* Add shadow for a visual effect */
 }
 
@@ -102,21 +106,73 @@
 }
 
 
+
+/* The below :focus will make it easier for user to tell which page they are on*/
+
+
+#homeClick:focus 
+{ 
+    border:rgb(0, 0, 0, 0);
+    border-bottom: rgba(0, 0, 0, 0.3);
+    border-style: solid;
+    border-bottom-width: 20px;
+    border-top-width: 20px;
+    border-radius: 10px;
+    border-collapse: collapse;  
+}
+
+
+#contactClick:focus 
+{ 
+    border:rgb(0, 0, 0, 0);
+    border-bottom: rgba(0, 0, 0, 0.3);
+    border-style: solid;
+    border-bottom-width: 20px;
+    border-top-width: 20px;
+    border-radius: 10px;
+    border-collapse: collapse;  
+ }
+
+
+
+ #leaderboardClick:focus 
+{ 
+    border:rgb(0, 0, 0, 0);
+    border-bottom: rgba(0, 0, 0, 0.3);
+    border-style: solid;
+    border-bottom-width: 20px;
+    border-top-width: 20px;
+    border-radius: 10px;
+    border-collapse: collapse;  
+ }
+
+
+
+/* The below :active will make the site look more respomsiove- once a button is clicked size will decrease of button slightly */
+#homeClick:active { transform: scale(0.9);  border: none; }
+
+#contactClick:active { transform: scale(0.9);  border: none; }
+
+#leaderboardClick:active { transform: scale(0.9);  border: none; }
+
+#signOutClick:active { transform: scale(0.9);  border: none; }
+
+
 /* Styling for the first navigation item */
 .navItem:first-child {
-    margin-left: 10px; /* Add a left margin */
-    margin-top: -15px; /* Adjust the top margin */
+    margin-left: 20px; /* Add a left margin */
+    margin-top: -5px; /* Adjust the top margin */
     width: 0 auto; /* Center horizontally */
-    height: 127px; /* Set the height */
+    height: 0 auto; /* Set the height */
 }
 
 
 /* Styling for the last navigation item */
 .navItem:last-child {
     margin-right: 18px; /* Add a right margin */
-    margin-top: -9px; /* Adjust the top margin */
+    margin-top: 3px; /* Adjust the top margin */
     width: 0 auto; /* Center horizontally */
-    height: 70px; /* Set the height */
+    height: 60px; /* Set the height */
 }
 
 
@@ -137,7 +193,7 @@ body {
     text-shadow: 0px 5px 10px #000000; /* Add a text shadow */
     text-align: center; /* Center-align the text */
     position: sticky; /* Set the position to sticky */
-    z-index: 2; /* Set the stacking order */
+    z-index: 4; /* Set the stacking order */
     margin-left: 0px; /* Adjust left margin */
     margin-top: -70px; /* Adjust top margin */
     margin-bottom: 50px; /* Adjust bottom margin */
@@ -172,13 +228,85 @@ body {
     display: none;
     position: absolute;
     min-width: 200px;
-    z-index: 3;
+    z-index: 5;
+    margin-left: -110px;
+    margin-top: -1px;
+
+    border-style: solid;
+    border-color: rgb(18, 40, 27, 0.3);
+    border-width: 3px;
+    border-radius: 58px;   
+
+    background-color: #193725; /* Background color */
+    background-image: linear-gradient( #1f432d,#142f1f); 
+    box-shadow:  50px 50px 100px rgb(18, 40, 27),
+                -50px -50px 100px rgb(32, 70, 47, 0.3);
+
+    -webkit-animation: scale-up-top 0.9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+     animation: scale-up-top 0.9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+
+
+@-webkit-keyframes scale-up-top {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+  }
+  @keyframes scale-up-top {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+  }
+  
+
+
+
+
 .game-dropdown:hover .game-dropdown-content {
     display: block;
+    transition: opacity 0.9;
 }
 
 
+
+
+.game-dropdown .game-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.game-dropdown .game-item img {
+    width: 400px;
+    height: 50px;
+    margin-right: -20px;
+
+    
+}
+
+.game-dropdown .game-item span {
+    color: white;
+    font-size: 16px;
+}
 
 
 
