@@ -6,7 +6,7 @@ body
 
     enable-background: new;
     background-color:rgb(174, 181, 181) ;
-    background-image: url("Assets/cutcube.png");
+    background-image: url("cutcube.png");
     background-repeat: repeat; 
     background-attachment: fixed;    
 
