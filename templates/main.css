@@ -137,7 +137,7 @@ body {
     text-shadow: 0px 5px 10px #000000; /* Add a text shadow */
     text-align: center; /* Center-align the text */
     position: sticky; /* Set the position to sticky */
-    z-index: 1; /* Set the stacking order */
+    z-index: 2; /* Set the stacking order */
     margin-left: 0px; /* Adjust left margin */
     margin-top: -70px; /* Adjust top margin */
     margin-bottom: 50px; /* Adjust bottom margin */
@@ -157,6 +157,28 @@ body {
         margin-top: 10px; /* Add space between the logo and title */
     }
 }
+
+
+
+
+/* GAME DROP DOWN MENU */
+
+.game-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.game-dropdown .game-dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    z-index: 3;
+}
+.game-dropdown:hover .game-dropdown-content {
+    display: block;
+}
+
+
 
 
 
