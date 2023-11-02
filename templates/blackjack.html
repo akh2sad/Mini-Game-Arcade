@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>  
+<head>
+    <title>Mini-Games</title>
+    <div class="Title">Mini-Game Arcade</div>  
+</head>
+<link rel ="stylesheet" href="main.css">
+<link rel ="stylesheet" href="gamepage.css">
+<body>
+    <div class="topNav">
+
+        <div class ="navItem" id="logo">
+            <img id="logoImage" src="">
+        </div>
+
+        <div class="navItem" id="nav">
+            <a href="#home" class="button home-button" id="homeClick" ><img src="
+                ../assets/Home-icon.png" alt="Home"><span class="popup">Home</span></a>
+
+            <div class="game-dropdown">
+                <button href="#games" class="button game-button" ><img src="../assets/game-icon.png" alt="Games"><!-- <span class="popup">Games</span> --></button>
+               
+                <div class="game-dropdown-content">
+                    
+
+
+                    <a href="../TheNumberGuesserGame/numG.html">
+                        <div class="game-item" id="numberguesser-button">
+                            <span>Number Guesser</span>
+                        </div>
+                    </a>
+
+                    <a href="../templates/blackjack.html">
+                        <div class="game-item" id="blackjack-button">
+                        
+                                <span> BlackJack </span>
+                        
+                        </div>
+                     </a>
+
+                    <div class="game-item">
+                        <span>Game 3</span>
+                    </div>
+
+                    <div class="game-item">
+                       
+                        <span>Game 3</span>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <a href="../contact.html" class="button contact-button" id="contactClick"><img src="../assets/contact-icon.png" alt="Contact"><span class="popup">Contact</span></a>
+            <a href="#leaderboard" class="button leaderboard-button" id="leaderboardClick"><img src="../assets/leaderboardicon.png" alt="leaderboard"><span class="popup">Leaderboard</span></a>
+        </div>
+
+        <div class="navItem" id="signOut">
+            <a href="#signOut" class="signOut-button"  id="signOutClick"><img src="../assets/login-icon.png"></a>
+        </div>
+        
+    </div>
+    <div class="bodyDiv">
+    
+        <h2>Game: Short Game Description</h2>
+        
+       <style>
+        #middleContents {
+            text-align: center;
+            background-color:lightblue;
+            height: 100%;
+            margin-top: none;
+    
+        }
+        game-screen {
+            border-width: 0cap;
+        }
+
+
+       </style>
+       
+        <div class="container">
+            
+            <div class="game-screen">
+            <!-- Main content goes here -->
+            
+              
+
+
+                <div id ="middleContents">
+                    <p>Welcome to BlackJack! Click start game to begin!!<p>
+                    <div id="log"></div>
+                    <button id="start-game">Start Game</button>
+                    <button id = "hit">Hit</button>
+                    <button id ="stand">Stand</button>
+
+                    <br> <br>
+                    <img src ="https://media.discordapp.net/attachments/858800808576417822/942229794173628436/818966090544971807.gif"> 
+                </div>
+            
+            </div>
+            <div class="score">
+                <h2>Score:</h2>
+            
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <script>
+
+                function updateLog(message) {
+            const logElement = document.getElementById('log');
+            logElement.innerHTML += message + '<br>';
+        }
+
+        function clearLog(){
+            const logElement = document.getElementById('log')
+            logElement.innerHTML = '';
+
+        }
+        var hit2 = 0;
+            var hit = document.getElementById('hit')
+            var stand = document.getElementById('stand')
+
+
+                hit.addEventListener("click", function playGame(){
+                    let randomNumber = Math.floor(Math.random() * 10) + 1; // Generate a random card value (1-10)
+
+                    
+                    hit2 += randomNumber;
+                    updateLog("You drew a " + randomNumber + ". Your hand: " + hit2);
+
+                    if (hit2 > 21) {
+                        updateLog("You're over 21, YOU LOSE!");
+                        endGame();
+                    } else if (hit2 === 21) {
+                        updateLog("Nice, you got "+hit2);
+                        test();
+                    }
+                });  
+            
+                stand.addEventListener("click", function(){
+                    updateLog("You have " + hit2 + " hand");
+                    test();
+                })
+                
+                
+            
+
+
+
+        function test() {
+            updateLog(hit2)
+            var house = 0;
+            while (house < 21) {
+                var randomNumber = Math.floor(Math.random() * 10) + 1;
+                house += randomNumber;
+                updateLog("House drew a " + randomNumber + ". House hand: " + house);
+
+                if (house > 21) {
+                    house = house - randomNumber;
+                    updateLog("House drew a " + randomNumber + ". House hand: " + house);
+                    break;
+                }
+            }
+
+            if (hit2 > house) {
+                updateLog("Congrats, you win! You had " + hit2 + " and the house had " + house);
+            } else if (house > hit2) {
+                updateLog("Aww shucks, you lost. But you know what they say... the dealer always wins. the dealer had " + house + " and you had " +hit2);
+
+            } else {
+                updateLog("looks like it's a draw")
+            }
+            
+        }
+
+        function endGame() {
+            // Disable the submit button when the game ends
+            //document.getElementById('submit').disabled = true;
+            hit2 = 0;  
+                
+                
+        }
+
+        document.getElementById('start-game').addEventListener('click', function () {
+            // Enable the submit button and start the game
+            hit2 = 0;
+            //document.getElementById('submit').disabled = false;
+            clearLog();
+            updateLog("Game started. You can hit or stand.");
+            playGame();
+        });
+
+    </script>
+    
+<!-- the below script is to randomly change the logo img -->
+        <script>
+        
+            // Array of possible logo image sources
+            var logoImages = [
+                "../assets/cyndaquil-alt-giflogo.gif" ,
+                "../assets/bulbasaur-alt0giflogo.gif",
+                "../assets/machamp-alt-giflogo.gif",
+                "../assets/starter-alt-giflogo.gif",
+
+            ];
+            // Select a random image source from the array
+            var randomImageIndex = Math.floor(Math.random() * logoImages.length);
+            var randomImageSource = logoImages[randomImageIndex];
+
+            // Update the src attribute of the logo image element
+            document.getElementById("logoImage").src = randomImageSource;
+            
+        </script>
+
+</body>
+</html>
