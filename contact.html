@@ -1,4 +1,100 @@
-/* Styling for the top navigation bar */
+<title>Mini-Games</title>
+    <div class="Title">Mini-Game Arcade</div>  
+</head>
+<link rel ="stylesheet" href="main.css">
+<body>
+
+<div class="topNav">
+
+    <div class ="navItem" id="logo">
+        <img id="logoImage" src="">
+    </div>
+
+    <div class="navItem" id="nav">
+        <a href="./templates/main.html" class="button home-button" id="homeClick" ><img src="
+            ./assets/Home-icon.png" alt="Home"><span class="popup">Home</span></a>
+
+        <div class="game-dropdown">
+            <button href="#games" class="button game-button" ><img src="./assets/game-icon.png" alt="Games"><!-- <span class="popup">Games</span> --></button>
+           
+            <div class="game-dropdown-content">
+                
+
+
+                <a href="./TheNumberGuesserGame/numG.html">
+                    <div class="game-item" id="numberguesser-button">
+                        <span>Number Guesser</span>
+                    </div>
+                </a>
+
+                <a href="./blackjack/blackjack.html">
+                    <div class="game-item" id="blackjack-button">
+                    
+                            <span> BlackJack </span>
+                    
+                    </div>
+                 </a>
+
+                <div class="game-item">
+                    <span>Game 3</span>
+                </div>
+
+                <div class="game-item">
+                   
+                    <span>Game 3</span>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <a href="./contact.html" class="button contact-button" id="contactClick"><img src="./assets/contact-icon.png" alt="Contact"><span class="popup">Contact</span></a>
+        <a href="#leaderboard" class="button leaderboard-button" id="leaderboardClick"><img src="./assets/leaderboardicon.png" alt="leaderboard"><span class="popup">Leaderboard</span></a>
+    </div>
+
+    <div class="navItem" id="signOut">
+        <a href="#signOut" class="signOut-button"  id="signOutClick"><img src="./assets/login-icon.png"></a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+<div class = 'contactInfo'>
+<h1>Waleed Hofioni discord @ waleed0000</h1>
+<h1>Seenan Iftekhar discord @ flight72</h1>
+<h1>Belal discord @ bilal199</h1>
+<h1>Dawood discord @ akh2sad</h1>
+</div>
+<Style>
+
+     h1{
+        
+        color:aqua;
+        opacity: 40%;
+
+        
+        
+        
+    } 
+    
+
+    .contactInfo{
+        margin-top:150px; 
+       text-align: center;
+        padding:15px;
+        
+    }
+ 
+
+
+
+
+
+    /* Styling for the top navigation bar */
 .topNav {
     display: flex; /* Use flexbox layout */
     flex-direction: row; /* Arrange items in a row */
@@ -315,14 +411,14 @@ body {
 }
 
 #blackjack-button {
-    background-image: url("../assets/blackjackcards.jpg");
+    background-image: url("./assets/blackjackcards.jpg");
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
     background-color: #cccccc;
     background-size: contain;
 }
 
 #numberguesser-button {
-    background-image: url("../TheNumberGuesserGame/cutcube.png");
+    background-image: url("./TheNumberGuesserGame/cutcube.png");
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
     background-size: contain;
 }
@@ -331,48 +427,4 @@ a {
     text-decoration: none;
     color: white;
 }
-
-                                /* all the bottim is waldo code, code for thumbnails n shit*/
-
-/*  
-#blackjack{
-/* float:right; */
-/* position:absolute;
-margin-left:20%; 
-
-}
-
-#number{
-     position: absolute; 
-}
-
-#tic{
-     margin-left:40%; 
-
-}
-#rock{
-     margin-left:60%; 
-
-} */
-
-#flexbox{
-    color:rgb(93, 172, 93);
-    display:flex;
-    justify-content:space-evenly;
-    align-items: center;
-    padding-bottom: 15px;
-    
-    
-    
-}
-.flexbox-image{
-    display:flex;
-    justify-content: space-evenly;
-    align-items: center;   
-}
-
-#numberGuesserImg{
-     opacity:40%; 
-    
-}
-
+</Style>
