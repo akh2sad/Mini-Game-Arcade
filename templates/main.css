@@ -311,7 +311,7 @@ body {
     border-style: solid; /* Solid border style */
     border-color: #193725; /* Border color */
     margin-top: 5px;
-    height: 70vh;
+    height: 100%;
 }
 
 #blackjack-button {
