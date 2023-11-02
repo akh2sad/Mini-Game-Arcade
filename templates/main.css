@@ -304,6 +304,11 @@ body {
     font-size: 16px;
    
 }
+
+
+
+
+/* this is where the game is shown */
 .bodyDiv{
     background-color: #193725; /* Background color */
     border-radius: 50px; /* Round the corners */
@@ -313,6 +318,9 @@ body {
     margin-top: 5px;
     height: 100%;
 }
+
+
+
 
 #blackjack-button {
     background-image: url("../assets/blackjackcards.jpg");
