@@ -261,7 +261,7 @@ font-style: oblique;
                     <h1>Number Guesser Game</h1>
                     <p>guess a number between 0 and 100</p>
                     <input type="number" id="ngguessInput">
-                    <button id="ngsubmitGuess"> Submit Guess</button>
+                    <button id="ngsubmitGuess" name="submitGuess" > Submit Guess</button>
                     <p  id="ngmessage" class="ngmessage"></p>
                     <button id="ngplayAgainButton">Play Again!</button>
                 </div>
@@ -298,62 +298,54 @@ font-style: oblique;
             const x = "no";
             let randomNumber = Math.round(Math.random() * 100);
             let guessedNumber;
-////
-            function displayMessage(message) 
-            { document.getElementById('message').textContent = message; }
-        
-//// this function checks if the number is correct and displays the message accordingly 
-            function checkGuess()  
-            {
-                if (guessedNumber === randomNumber) 
-                    {
-                        displayMessage(`${guessedNumber} is correct!`);
 
-                        setTimeout(() =>{ document.getElementById('playAgainButton').style.display = 'block';}, 2700);
+            ////////////////////////////////
 
-                    } 
+            function displayMessage(message) { document.getElementById('ngmessage').textContent = message; }
+
+
+            //// this function checks if the number is correct and displays the message accordingly 
+            function checkGuess() {
+                if (guessedNumber === randomNumber) {
+                    displayMessage(`${guessedNumber} is correct!`);
+                    setTimeout(() => { document.getElementById('ngplayAgainButton').style.display = 'block'; }, 2700);
+                } 
                 else 
-                    {
-                        let temp = guessedNumber - randomNumber;
-                        if (temp <= 2 && temp >= -2) 
-                        {displayMessage("You are getting extremely warm.");} 
-
-                        else if (temp <= 5 && temp >= -5) 
-                        {displayMessage("You are getting very warm.");}
-
-                        else if (temp <= 10 && temp >= -10) 
-                        {displayMessage("You are getting warmer.");} 
-
-                        else {displayMessage("You are cold.");}
-                    }
-            }
-/// this part checks if the input is valid
-            document.getElementById('submitGuess').addEventListener
-            ('click', () => 
                 {
-                    guessedNumber = parseInt(document.getElementById('guessInput').value, 10);
-                    document.getElementById('guessInput').value = '';
+                    let temp = guessedNumber - randomNumber;
 
-                    if (guessedNumber <= -1 || guessedNumber >= 101) 
-                         {displayMessage("Invalid number.");} 
+                    if (temp <= 2 && temp >= -2) { displayMessage("You are getting extremely warm."); } 
+                    else if (temp <= 5 && temp >= -5) { displayMessage("You are getting very warm."); } 
+                    else if (temp <= 10 && temp >= -10) { displayMessage("You are getting warmer."); } 
+                    else { displayMessage("You are cold."); }
 
-                    else if (isNaN(guessedNumber)) 
-                        {displayMessage("Invalid input! Please choose a number.");} 
-
-                    else {checkGuess();}
                 }
-                );
-//// this part makes the play again function 
-            document.getElementById('playAgainButton').addEventListener('click', () => { resetGame(); });
+            }
 
-            function resetGame() 
-                 {
-                    guessedNumber = null;
-                    displayMessage("Guess a number between 0 and 100:");
-                    randomNumber = Math.round(Math.random() * 100);
-                    playAgain = null;
-                    document.getElementById('playAgainButton').style.display = 'none'; // Hide the "Play Again" button
-                 }
+
+            /// this part checks if the input is valid
+            document.getElementById('ngsubmitGuess').addEventListener('click', () => {
+            guessedNumber = parseInt(document.getElementById('ngguessInput').value, 10);
+            document.getElementById('ngguessInput').value = '';
+
+            if (guessedNumber <= -1 || guessedNumber >= 101) { displayMessage("Invalid number."); } 
+            else if (isNaN(guessedNumber)) { displayMessage("Invalid input! Please choose a number.");} 
+            else { checkGuess(); }
+            });
+
+
+            //// this part makes the play again function 
+            document.getElementById('ngplayAgainButton').addEventListener('click', () => { resetGame(); });
+
+            //this function is called when the user clicks the play again button
+            function resetGame() {
+            guessedNumber = null;
+            displayMessage("Guess a number between 0 and 100:");
+            randomNumber = Math.round(Math.random() * 100);
+            playAgain = null;
+            document.getElementById('ngplayAgainButton').style.display = 'none';
+            }
+
         </script>
     
 <!-- the below script is to randomly change the logo img -->
