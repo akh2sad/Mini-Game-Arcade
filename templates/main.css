@@ -77,7 +77,7 @@
     left: 50%; /* Horizontally center the popup */
     transform: translateX(-50%); /* Center the popup horizontally */
     white-space: nowrap; /* Prevent text from wrapping */
-    animation: fadeIn 0.9s 0.5s both; /* Add a fade-in animation */
+    animation: fadeIn 0.05s 0.05s both; /* Add a fade-in animation */
 }
 
 
@@ -194,7 +194,7 @@ body {
     position: sticky; /* Set the position to sticky */
     z-index: 4; /* Set the stacking order */
     margin-left: 0px; /* Adjust left margin */
-    margin-top: -70px; /* Adjust top margin */
+    margin-top: -50px; /* Adjust top margin */
     margin-bottom: 50px; /* Adjust bottom margin */
 }
 
@@ -291,20 +291,18 @@ body {
     display: flex;
     align-items: center;
     padding: 20px;
-    
+  
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+  
 }
 
-.game-dropdown .game-item img {
-    width: 400px;
-    height: 50px;
-    margin-right: -20px;
-
-    
-}
 
 .game-dropdown .game-item span {
+    background-color: rgba(0, 0, 0, 0.75);
     color: white;
     font-size: 16px;
+   
 }
 .bodyDiv{
     background-color: #193725; /* Background color */
@@ -316,6 +314,21 @@ body {
     height: 70vh;
 }
 
+#blackjack-button {
+    background-image: url("../assets/blackjackcards.jpg");
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+    background-color: #cccccc;
+    background-size: contain;
+}
 
+#numberguesser-button {
+    background-image: url("../TheNumberGuesserGame/cutcube.png");
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+    background-size: contain;
+}
 
+a {
+    text-decoration: none;
+    color: white;
+}
 
