@@ -6,14 +6,11 @@
     justify-content: space-between; /* Spread items evenly horizontally */
     background-color: #193725; /* Background color */
     background-image: linear-gradient(#193725, #1f432d); /* Gradient background */
-    
     box-shadow: 0px 5px 10px #000000; /* Add shadow for a visual effect */
-    
     border-radius: 50px; /* Round the corners */
     border-width: 3px;
     border-style: solid; /* Solid border style */
     border-color: #193725; /* Border color */
-
     width: 100%; /* Take up the full width of the container */
     height: 90px; /* Set the height of the navigation bar */
     margin-top: -40px; /* Adjust the margin to fine-tune the layout */
@@ -179,7 +176,15 @@ body {
 }
 
 
-
+.bodyDiv{
+    background-color: #193725; /* Background color */
+    border-radius: 50px; /* Round the corners */
+    border-width: 3px;
+    border-style: solid; /* Solid border style */
+    border-color: #193725; /* Border color */
+    margin-top: 5px;
+    height: 70vh;
+}
 
 
 
