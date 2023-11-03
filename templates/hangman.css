@@ -1,17 +1,18 @@
 #hmbody
-                    {
-                        text-align: center; 
-                        
-                        
-                        z-index: 10;
-                        enable-background: new;
-    background-color:rgb(174, 181, 181) ;
-                        background-repeat: repeat; 
-                        background-attachment: fixed;    
-                        
+ {
+        text-align: center; 
+                                
+                                
+        z-index: 10;
+        enable-background: new;
+        background-color:rgb(174, 181, 181) ;
+        background-image: linear-gradient(rgb(174, 181, 181),rgb(174, 181, 181), rgb(174, 181, 181), rgb(31, 87, 44 ));
+        background-repeat: repeat; 
+        background-attachment: fixed;       
+        border-radius: 10px;
 
-                        transition: background-color 0.9s, color 0.3s, font-size 0.9s, color 0.5s;
-                    }
+        transition: background-color 0.9s, color 0.3s, font-size 0.9s, color 0.5s;
+ }
 
                     
 #word{
