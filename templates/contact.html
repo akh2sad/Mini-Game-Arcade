@@ -1,124 +1,185 @@
 <!DOCTYPE html>
-<html>  
+<html>
 <head>
     <title>Mini-Games</title>
-    <div class="Title">Mini-Game Arcade</div>  
+    <!-- Page title -->
+    <div class="Title">Mini-Game Arcade</div>
 </head>
-<link rel ="stylesheet" href="main.css">
-<link rel ="stylesheet" href="gamepage.css">
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="contact.css">
 <body>
     <div class="topNav">
-
-        <div class ="navItem" id="logo">
+        <!-- Top navigation bar -->
+        <div class="navItem" id="logo">
+            <!-- Logo -->
             <img id="logoImage" src="">
         </div>
 
         <div class="navItem" id="nav">
-            <a href="../templates/main.html" class="button home-button" id="homeClick" ><img src="
-                ../assets/Home-icon.png" alt="Home"><span class="popup">Home</span></a>
-
+            <!-- Navigation menu -->
+            <a href="../templates/main.html" class="button home-button" id="homeClick">
+                <!-- Home button -->
+                <img src="../assets/Home-icon.png" alt="Home">
+                <span class="popup">Home</span>
+            </a>
             <div class="game-dropdown">
-                <button href="#games" class="button game-button" ><img src="../assets/game-icon.png" alt="Games"><!-- <span class="popup">Games</span> --></button>
-               
+                <button href="#games" class="button game-button">
+                    <!-- Games dropdown button -->
+                    <img src="../assets/game-icon.png" alt="Games">
+                </button>
+                <!-- Games dropdown content -->
                 <div class="game-dropdown-content">
-                    
-
-
                     <a href="../templates/ng.html">
+                        <!-- Game 1: Number Guesser -->
                         <div class="game-item" id="numberguesser-button">
                             <span>Number Guesser</span>
                         </div>
                     </a>
-
                     <a href="../templates/bjack.html">
+                        <!-- Game 2: BlackJack -->
                         <div class="game-item" id="blackjack-button">
-                        
-                                <span> BlackJack </span>
-                        
+                            <span>BlackJack</span>
                         </div>
-                     </a>
-
+                    </a>
                     <div class="game-item">
+                        <!-- Game 3 (You can specify a name) -->
                         <span>Game 3</span>
                     </div>
-
-                    <div class="game-item">
-                       
-                        <span>Game 3</span>
+                    <div class "game-item">
+                        <!-- Game 4 (You can specify a name) -->
+                        <span>Game 4</span>
                     </div>
-
                 </div>
-                
             </div>
-
-            <a href="../templates/contact.html" class="button contact-button" id="contactClick"><img src="../assets/contact-icon.png" alt="Contact"><span class="popup">Contact</span></a>
-            <a href="#leaderboard" class="button leaderboard-button" id="leaderboardClick"><img src="../assets/leaderboardicon.png" alt="leaderboard"><span class="popup">Leaderboard</span></a>
+            <a href="../templates/contact.html" class="button contact-button" id="contactClick">
+                <!-- Contact button -->
+                <img src="../assets/contact-icon.png" alt="Contact">
+                <span class="popup">Contact</span>
+            </a>
+            <a href="#leaderboard" class="button leaderboard-button" id="leaderboardClick">
+                <!-- Leaderboard button -->
+                <img src="../assets/leaderboardicon.png" alt="Leaderboard">
+                <span class="popup">Leaderboard</span>
+            </a>
         </div>
-
         <div class="navItem" id="signOut">
-            <a href="#signOut" class="signOut-button"  id="signOutClick"><img src="../assets/login-icon.png"></a>
+            <!-- Sign Out button -->
+            <a href="#signOut" class="signOut-button" id="signOutClick">
+                <img src="../assets/login-icon.png">
+            </a>
         </div>
-        
     </div>
-
-
     <div class="bodyDiv">
-    
-        <h2>How to contact us!</h2>
-        
-       
-        
-       
         <div class="container">
-            <div class = 'contactInfo'>
-                <h1>Waleed Hofioni discord @ waleed0000</h1>
-                <h1>Seenan Iftekhar discord @ flight72</h1>
-                <h1>Belal discord @ bilal199</h1>
-                <h1>Dawood discord @ akh2sad</h1>
+            <div class="contact-option">
+                <!-- Contact via Email -->
+                <h2>Contact via Email</h2>
+                <img class="email-contact-img" src="../assets/email-icon.png" alt="Email" onclick="showContact('email')">
+                <!-- Email contact details -->
+                <div id="email-details" class="contact-details">
+                    <form class="contactForm">
+                        <div class="half left cf">
+                            <!-- Name input -->
+                            <input type="text" id="input-name" placeholder="Name">
+                            <!-- Email input -->
+                            <input type="email" id="input-email" placeholder="Email address">
+                            <!-- Subject selection dropdown -->
+                            <select id="input-subject">
+                                <option value="new-game-request">New Game Request</option>
+                                <option value="report-bug">Report a Bug</option>
+                                <option value="general-inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="half right cf">
+                            <!-- Message input -->
+                            <textarea name="message" id="input-message" placeholder="Message"></textarea>
+                        </div>
+                        <!-- Send Message button -->
+                        <button type="button" onclick="submitFormEmail()" id="input-submit">Send Message</button>
+                        <!-- Thank you message for Email contact -->
+                        <div id="thank-you-message-email" class="message"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="contact-option">
+                <!-- Contact on Discord -->
+                <h2>Contact on Discord</h2>
+                <img class="discord-contact-img" src="../assets/discord-icon.png" alt="Discord" onclick="showContact('discord')">
+                <!-- Discord contact details -->
+                <div id="discord-details" class="contact-details">
+                    <p>Bilal : @bilal199</p>
+                    <p>Waleed: @waleed0000</p>
+                    <p>Dawood: @akh2sad</p>
+                    <p>Seenan: @flight72</p>
+                    <p id="server">Server: Batmans cave</p>
+                </div>
             </div>
         </div>
-    
-        <Style>
-
-            h1{
-               
-               color:aqua;
-               opacity: 40%;
-       
-               
-               
-               
-           } 
-           
-       
-           .contactInfo{
-               margin-top:150px; 
-              text-align: center;
-               padding:15px;
-               
-           }
-       </style>
-
-
-<!-- the below script is to randomly change the logo img -->
+        <!-- JavaScript functions -->
+        <!-- Function to validate email format -->
         <script>
+            function validateEmail(email) {
+                const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+                return regex.test(email);
+            }
         
-            // Array of possible logo image sources
+            // Function to handle the submission of the Email contact form
+            function submitFormEmail() {
+                const name = document.getElementById("input-name").value;
+                const email = document.getElementById("input-email").value;
+                const subject = document.getElementById("input-subject").value;
+                const message = document.getElementById("input-message").value;
+        
+                // Validate name
+                if (!name.match(/^[A-Za-z\s]+$/) || name.length === 0) {
+                    alert("Please enter a valid name containing only alphabets.");
+                    return;
+                }
+        
+                // Validate email
+                if (!validateEmail(email) || email.length === 0) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+        
+                // Disable the form elements
+                document.getElementById("input-name").disabled = true;
+                document.getElementById("input-email").disabled = true;
+                document.getElementById("input-subject").disabled = true;
+                document.getElementById("input-message").disabled = true;
+                document.querySelector("button").disabled = true;
+        
+                // Display the thank you message
+                const thankYouMessage = document.getElementById("thank-you-message-email");
+                thankYouMessage.textContent = `Thank you, ${name}! Your email message has been received.`;
+                thankYouMessage.style.display = "block";
+            }
+        </script>
+
+        <!-- Function to toggle contact details -->
+        <script>
+            function showContact(contactType) {
+                const contactDetails = document.getElementById(`${contactType}-details`);
+                if (contactDetails.style.display === "block") {
+                    contactDetails.style.display = "none";
+                } else {
+                    contactDetails.style.display = "block";
+                }
+            }
+        </script>
+
+        <!-- Script to randomly change the logo image -->
+        <script>
             var logoImages = [
-                "../assets/cyndaquil-alt-giflogo.gif" ,
+                "../assets/cyndaquil-alt-giflogo.gif",
                 "../assets/bulbasaur-alt0giflogo.gif",
                 "../assets/machamp-alt-giflogo.gif",
                 "../assets/starter-alt-giflogo.gif",
-
             ];
-            // Select a random image source from the array
             var randomImageIndex = Math.floor(Math.random() * logoImages.length);
             var randomImageSource = logoImages[randomImageIndex];
-
-            // Update the src attribute of the logo image element
             document.getElementById("logoImage").src = randomImageSource;
-            
         </script>
-
+    </div>
 </body>
 </html>

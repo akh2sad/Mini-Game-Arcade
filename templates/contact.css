@@ -1,0 +1,209 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 75%;
+    padding: 150px;
+    gap: 10px;
+
+    background-image: linear-gradient(#193725, #83a590); /* Gradient background */
+    border-radius: 47px;
+  }
+  
+  
+  .game-screen {
+    flex-grow: 1; /* Takes up remaining space */
+    background-color: black;
+    padding: 20px;  
+    border-radius: 10px; /* Round the corners */
+    border-width: 3px;
+    border-style: solid; /* Solid border style */
+    border-color:#193725; 
+    width: auto;
+
+    
+    
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; 
+    }
+  }
+
+  .contact-option {
+    margin: 0 auto ;
+    margin-top: -120px;
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+
+.email-contact-img {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    margin-left: -15px;
+    cursor: pointer;
+}
+
+.discord-contact-img {
+    position: relative;
+    margin-top: -70px;
+    margin-left: -70px;
+    width: 350px;
+    height: 350px;
+    cursor: pointer;
+}
+
+
+.email-contact-img:active { transform: scale(0.97); }
+.discord-contact-img:active { transform: scale(0.97); }
+
+
+.contact-details {
+    color: darkseagreen;
+    display: none;
+    margin: auto;
+    position: absolute;
+
+}
+
+
+#discord-details {
+    color: darkseagreen;
+    background-color: rgb(42, 46, 42);
+
+    display: none;
+    margin-left: 15px ;
+    margin-top: -55px;
+    position: absolute;
+    font-family:monospace;
+    font-weight: 50px;
+    
+    
+    padding: 10px;
+    padding-left: 25px;
+
+    border-radius: 20px;
+    border-style: double;
+    border-color: rgb(18, 39, 26, 0.7);
+    border-width: 4px;
+    
+    box-shadow:  27px 27px 35px #12281b,
+    -27px -27px 35px rgb(32, 70, 47, 0.3);
+
+    
+}
+.contactInfo{
+       margin-top: -150px; 
+      text-align: center;
+       padding:15px;  
+ }
+
+
+
+
+form 
+{
+    max-width: 400px;
+    text-align: center;
+    margin: 20px auto;
+    margin-left: -100px;
+    border-style: none;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow:  37px 37px 45px #12281b,
+                 -37px -37px 45px rgb(32, 70, 47, 0.3);/* Add shadow for a visual effect */
+
+    background-color: rgb(164, 206, 175, 0.9);
+   
+   input, textarea {
+      display: block;
+      width: 100%;
+      font-family: 'Merriweather', sans-serif;
+      resize: none;
+      
+
+   }
+      
+   textarea { height: 126px; }
+ }
+
+
+textarea, input
+{
+    background-color: rgb(126, 170, 138);
+
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.3);
+    margin: 7px;
+    padding: 4px;
+    color: black;
+}
+
+.input-subject {
+    border-radius: 20px;
+}
+
+
+ #input-submit {
+    color: rgb(0, 0, 0); 
+    background: rgb(160, 206, 171);
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkseagreen;
+    border-radius: 30px;
+    box-shadow: 0 1px 2px rgb(0, 0, 0);
+    padding: 5px;
+    padding-left: 9px;
+    padding-right: 9px;
+
+ }
+
+
+ #input-submit:hover {
+    color: rgb(0, 0, 0); 
+    background: rgb(128, 188, 142);
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 1px 2px rgb(0, 0, 0);
+
+ }
+
+
+ #input-submit:active {
+    color: rgb(0, 0, 0); 
+    background: rgb(128, 188, 142);
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 1px 2px rgb(0, 0, 0, 0);
+    transform: scale(0.92);
+
+ }
+ 
+ 
+ .half {
+   float: left;
+   width: 48%;
+   margin-bottom: 1em;
+ }
+ 
+ .right { width: 50%; }
+ 
+ .left {
+      margin-right: 2%; 
+ }
+ 
+ 
+ @media (max-width: 480px) {
+   .half {
+      width: 100%; 
+      float: none;
+      margin-bottom: 0; 
+   }
+ }
+ 
