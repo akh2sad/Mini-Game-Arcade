@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>  
+<head>
+    <title>Mini-Games</title>
+    <div class="Title">Mini-Game Arcade</div>  
+</head>
+<link rel ="stylesheet" href="main.css">
+<link rel ="stylesheet" href="gamepage.css">
+<link rel="stylesheet" href="hangman.css">
+
+<body>
+    <div class="topNav">
+
+        <div class ="navItem" id="logo">
+            <img id="logoImage" src="">
+        </div>
+
+        <div class="navItem" id="nav">
+            <a href="../templates/main.html" class="button home-button" id="homeClick" ><img src="
+                ../assets/Home-icon.png" alt="Home"><span class="popup">Home</span></a>
+
+            <div class="game-dropdown">
+                <button href="#games" class="button game-button" ><img src="../assets/game-icon.png" alt="Games"><!-- <span class="popup">Games</span> --></button>
+               
+                <div class="game-dropdown-content">
+                    
+
+
+                    <a href="../templates/ng.html">
+                        <div class="game-item" id="numberguesser-button">
+                            <span>Number Guesser</span>
+                        </div>
+                    </a>
+
+                    <a href="../templates/bjack.html">
+                        <div class="game-item" id="blackjack-button">
+                        
+                                <span> BlackJack </span>
+                        
+                        </div>
+                     </a>
+
+                    <a href="../templates/hangman.html">
+                    <div class="game-item" id="hangman-button">
+                        <span>Hangman</span>
+                    </div>
+                    </a>
+
+                    <div class="game-item">
+                       
+                        <span>Game 3</span>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <a href="../templates/contact.html" class="button contact-button" id="contactClick"><img src="../assets/contact-icon.png" alt="Contact"><span class="popup">Contact</span></a>
+            <a href="#leaderboard" class="button leaderboard-button" id="leaderboardClick"><img src="../assets/leaderboardicon.png" alt="leaderboard"><span class="popup">Leaderboard</span></a>
+        </div>
+
+        <div class="navItem" id="signOut">
+            <a href="#signOut" class="signOut-button"  id="signOutClick"><img src="../assets/login-icon.png"></a>
+        </div>
+        
+    </div>
+    <div class="bodyDiv">
+    
+        <h2 class="gamename">Number Guesser Game:</h2>
+
+        <h3 class="gamedesc">HANGMAN <br> Can you beat the challenge and claim victory? Guess letter by letter until you die or get the word correct!</h2>
+        
+       
+        
+       
+        <div class="container">
+           
+     
+            <div class="game-screen">
+            <!-- Main content goes here -->
+                <div  id="hmbody">
+                    <h2 id="guessedLetters">  </h2>
+
+
+                    <div>
+                        <img id="hangman-image" src="../hangman/pic0.png" height="200px" alt="Hangman Image">
+                    </div>
+                        <span id="word">_ _ _ _ _ _ _ _</span><br><br>
+                        <input type="text" id="singleLetterInput" maxlength="1" pattern="[A-Za-z]" title="Please enter a single letter" required>
+<button id="submitButton">Submit</button><button id="reset">Reset</button>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+
+
+
+            <div class="score">
+                <h2 id="win">Score:</h2>
+            
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+<script>
+        const eightLetterWords = [
+  'happiness',  'mountain',  'elephant','festival',  'butterfly',  'hospital',  'tomorrow',  'rainbow',  'together',  'building',  'sunshine',
+  'keyboard',  'accident',    'loyalty',  'violinist',  'negative',  'laughter'
+];  
+    var hangmanImages = "../hangman/pic$.png"
+    
+    var wins = 0;
+    var state = 0;
+    var end = 5;
+    var word = getRandomWord();
+    var emptyWord = "_ _ _ _ _ _ _ _";
+
+    //Put the word into an array of letters with no duplicates
+    var wordArray = Array.from(new Set(word.split("")));
+
+
+    function getRandomWord(){
+        return eightLetterWords[Math.floor(Math.random() * eightLetterWords.length)];
+    }
+
+    function replaceDollarSign(number){
+        return hangmanImages.replace("$", number);
+    }
+
+    function changeImage(newImage) {
+        const image = document.getElementById("hangman-image");
+        image.src = newImage;
+
+    }
+
+    var letters = document.querySelectorAll(".letter");
+    var letterArray = Array.from(letters);
+        
+    var guessedLetters = [];
+
+    // Get references to the input element and submit button
+    var inputElement = document.getElementById("singleLetterInput");
+    var submitButton = document.getElementById("submitButton");
+
+    function lose(){
+        submitButton.style.display = "none";
+        inputElement.style.display = "none";
+        document.getElementById("word").style.color = "red";
+        document.getElementById("word").innerHTML = "Word was:" + word;
+        document.getElementById("reset").style.display = "inline";
+    
+    }
+
+    function win(){
+        //show reset button
+        document.getElementById("reset").style.display = "inline";
+        document.getElementById("word").style.color = "green";
+        document.getElementById("word").innerHTML = "Word was indeed:" + word;
+        submitButton.style.display = "none";
+        inputElement.style.display = "none";
+        wins++;
+        document.getElementById("win").innerHTML = "Score: " + wins;
+
+    }
+
+    // reset button
+    reset.addEventListener("click", function() {
+        state = 0;
+        word = getRandomWord();
+        emptyWord = "_ _ _ _ _ _ _ _";
+        wordArray = Array.from(new Set(word.split("")));
+        guessedLetters = [];
+        document.getElementById("word").innerHTML = emptyWord;
+        document.getElementById("guessedLetters").innerHTML = "Guessed Letters: ";
+        inputElement.style.display = "inline";
+        submitButton.style.display = "inline";
+        changeImage(replaceDollarSign(0));
+    });
+
+    submitButton.addEventListener("click", function() {
+    var inputValue = inputElement.value;
+
+    if (/^[A-Za-z]$/.test(inputValue)) {
+        inputValue = inputValue.toLowerCase();
+        if (guessedLetters.includes(inputValue)) {
+        alert("You already guessed that letter.");
+        return;
+        } else if (wordArray.includes(inputValue)) {
+            //hide reset button
+        document.getElementById("reset").style.display = "none";
+        guessedLetters.push(inputValue);
+        document.getElementById("guessedLetters").innerHTML = "Guessed Letters: " + guessedLetters.join(", ");
+        inputElement.value = "";
+        
+        //remove spaces from underscores
+        emptyWord = emptyWord.replace(/ /g, "");
+        //replace underscores with letters
+        for (var i = 0; i < word.length; i++) {
+        if (word[i] == inputValue) {
+            emptyWord = emptyWord.substring(0, i) + inputValue + emptyWord.substring(i + 1);
+        }
+        }
+        if (emptyWord == word) {
+        win();
+        }
+        //add spaces between underscores and letters
+        emptyWord = emptyWord.split("").join(" ");
+        
+        document.getElementById("word").innerHTML = emptyWord;
+        
+
+        
+        }
+        else {
+        //Change the image
+        state++;
+        changeImage(replaceDollarSign(state));
+         //Check if the game is over
+        if (state == end) {
+        lose();
+        } 
+        }
+
+    } else {
+        alert("Please enter a single letter.");
+    }
+    });
+
+  
+    
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+</script>
+
+    
+<!-- the below script is to randomly change the logo img -->
+        <script>
+        
+            // Array of possible logo image sources
+            var logoImages = [
+                "../assets/cyndaquil-alt-giflogo.gif" ,
+                "../assets/bulbasaur-alt0giflogo.gif",
+                "../assets/machamp-alt-giflogo.gif",
+                "../assets/starter-alt-giflogo.gif",
+
+            ];
+            // Select a random image source from the array
+            var randomImageIndex = Math.floor(Math.random() * logoImages.length);
+            var randomImageSource = logoImages[randomImageIndex];
+
+            // Update the src attribute of the logo image element
+            document.getElementById("logoImage").src = randomImageSource;
+            
+        </script>
+
+</body>
+</html>
