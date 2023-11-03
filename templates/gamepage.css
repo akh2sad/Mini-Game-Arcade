@@ -4,6 +4,8 @@
   height: 75%;
   padding: 3px;
   gap: 10px;
+  background-image: linear-gradient(#193725, #83a590); /* Gradient background */
+    border-radius: 47px;
 }
 
 .score {

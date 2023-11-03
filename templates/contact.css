@@ -81,6 +81,7 @@
     position: absolute;
     font-family:monospace;
     font-weight: 50px;
+    font-size: 15px;
     
     
     padding: 10px;
@@ -132,7 +133,7 @@ form
  }
 
 
-textarea, input
+textarea, input, #thank-you-message-email
 {
     background-color: rgb(126, 170, 138);
 
@@ -147,6 +148,7 @@ textarea, input
 .input-subject {
     border-radius: 20px;
 }
+
 
 
  #input-submit {
