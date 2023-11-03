@@ -61,18 +61,29 @@
     </div>
     <div class="bodyDiv">
     
-        <h2>Game: Short Game Description</h2>
+        <h2 class="gamename">Blackjack:</h2>
+        <h3 class="gamedesc">Players can start a game, draw cards, and decide whether to "Hit" or "Stand." The goal is to beat the house's hand without going over 21. <br> Enjoy a game of Blackjack in this simple, web-based arcade.</h2>
         
        
         
-       
+
         <div class="container">
        <style>
         #middleContents {
             text-align: center;
             background-color:lightblue;
-            height: 100%;
+
             margin-top: none;
+            max-width:300px;
+            max-height: 160px;
+            
+            text-align: center; 
+            border: 20px; 
+            padding: 200px;
+            padding-right: 400px;
+            padding-left : 400px;
+            z-index: 10;
+
     
         }
         game-screen {
@@ -87,9 +98,7 @@
             <div class="game-screen">
             <!-- Main content goes here -->
             
-              
-
-
+    
                 <div id ="middleContents">
                     <p>Welcome to BlackJack! Click start game to begin!!<p>
                     <div id="log"></div>
@@ -104,7 +113,7 @@
             </div>
             <div class="score">
                 <h2>Score:</h2>
-            
+           
             </div>
         </div>
 
