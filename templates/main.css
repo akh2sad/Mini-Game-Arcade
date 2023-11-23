@@ -1,3 +1,153 @@
+/* loading page */
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(45, 74, 58);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+  }
+  .loader {
+    width: 175px;
+    height: 175px;
+    background-color: #2fff00;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.9) inset,
+      0 5px 12px rgba(0, 0, 0);
+    overflow: hidden;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 45%;
+    top: -40%;
+    background-color: #2a2a2a;
+    animation: wave 5s linear infinite;
+  }
+  .loader:before {
+    border-radius: 30%;
+    background: rgba(255, 255, 255, 0.4);
+    animation: wave 5s linear infinite;
+  }
+  @keyframes wave {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+    /* .loader{
+    font-size: 48px;
+    font-weight: 600;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+
+    letter-spacing: 1.5px; 
+
+    color: rgb(181, 215, 179, 0.3); 
+
+    text-shadow: 0px 5px 10px #000000; 
+
+    text-align: center; 
+    position: relative;
+    margin-left: 0px; 
+    margin-top: -50px; 
+    margin-bottom: 50px; 
+
+
+
+    display: inline-block;
+
+
+  }
+  .loader:before{
+    content: '';
+    animation: 5s print linear alternate infinite;
+  }
+  .loader:after{
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translatey(-45%);
+    width: 2px;
+    height: 1.3em;
+    background: currentColor;
+    opacity: 0.8;
+    animation: 1s blink steps(2) infinite;
+  }
+  
+  @keyframes blink {
+    0%  { visibility: hidden;}
+    150%  { visibility: visible;}
+  }
+  @keyframes print {
+    0% { content: 'W'}
+    2.5% { content: 'We'}
+    5% { content: 'Wel'}
+    7.5% { content: 'Welc'}
+    10% { content: 'Welco'}
+    12.5% { content: 'Welcom'}
+    15% { content: 'Welcome'}
+    17.5% { content: 'Welcome '}
+    20% { content: 'Welcome t '}
+    22.5% { content: 'Welcome to'}
+    25% { content: 'Welcome to '}
+    27.5% { content: 'Welcome to T'}
+    30% { content: 'Welcome to Th'}
+    32.5% { content: 'Welcome to The'}
+    35% { content: 'Welcome to The '}
+    37.5% { content: 'Welcome to The M'}
+    40% { content: 'Welcome to The Mi'}
+    42.5% { content: 'Welcome to The Min'}
+    45% { content: 'Welcome to The Mini'}
+    47.5% { content: 'Welcome to The Mini-'}
+    50% { content: 'Welcome to The Mini-G'}
+    52.5% { content: 'Welcome to The Mini-Ga'}
+    55% { content: 'Welcome to The Mini-Gam'}
+    57.5% { content: 'Welcome to The Mini-Game'}
+    60% { content: 'Welcome to The Mini-Game '}
+    62.5% { content: 'Welcome to The Mini-Game A'}
+    65% { content: 'Welcome to The Mini-Game Ar'}
+    67.5% { content: 'Welcome to The Mini-Game Arc '}
+    70% { content: 'Welcome to The Mini-Game Arca'}
+    72.5% { content: 'Welcome to The Mini-Game Arcad'}
+    75% { content: 'Welcome to The Mini-Game Arcade'}
+    77.5% { content: 'Welcome to The Mini-Game Arcade '}
+    80% { content: 'Welcome to The Mini-Game Arcade!'}
+    82.5% { content: 'Welcome to The Mini-Game Arcade!!'}
+    85% { content: 'Welcome to The Mini-Game Arcade!!!'}
+    87.5% { content: 'Welcome to The Mini-Game Arcade!!!!'}
+    90% { content: 'Welcome to The Mini-Game Arcade!!!!'}
+    92.5% { content: 'Welcome to The Mini-Game Arcade!!!!'}
+    95% { content: 'Welcome to The Mini-Game Arcade!!!!'}
+    97.5% { content: 'Welcome to The Mini-Game Arcade!!!!'}
+    100% { content: 'Welcome to The Mini-Game Arcade!!!!'}
+
+    /* 0% { content: 'W'}
+    3.125% { content: 'We'}
+    6.25% { content: 'Wek'}
+    9.375% { content: 'Weks'}
+    12.5% { content: 'Weksde'}
+    15.625% { content: 'W'} 
+  } */
+
+
+
+
+
+
 /* Styling for the top navigation bar */
 .topNav {
     display: flex; /* Use flexbox layout */
@@ -62,6 +212,7 @@
     height: 32px; /* Set the image height */
     border: none; /* No border on the image */
     text-decoration: none; /* Remove text decoration */
+
 }
 
 
@@ -69,14 +220,15 @@
 .popup {
     display: none; /* Initially, hide the popup */
     position: absolute; /* Position it absolutely within the button */
-    background-color: rgba(0, 0, 0, 0.4); /* Background color with transparency */
+    background-color: rgba(0, 0, 0, 0.6); /* Background color with transparency */
     color: white; /* Text color */
-    padding: 5px; /* Padding around the text */
+    padding: 4px; /* Padding around the text */
     border-radius: 5px; /* Round the corners */
-    bottom: -25%; /* Position the popup relative to the button */
-    left: 50%; /* Horizontally center the popup */
+    bottom: -0%; /* Position the popup relative to the button */
+    left: 90%; /* Horizontally center the popup */
     transform: translateX(-50%); /* Center the popup horizontally */
     white-space: nowrap; /* Prevent text from wrapping */
+    font-size: small;
     animation: fadeIn 0.05s 0.05s both; /* Add a fade-in animation */
 }
 
@@ -109,40 +261,22 @@
 /* The below :focus will make it easier for user to tell which page they are on*/
 
 
-#homeClick:focus 
+#homeClick:focus
 { 
-    border:rgb(0, 0, 0, 0);
-    border-bottom: rgba(0, 0, 0, 0.3);
-    border-style: solid;
-    border-bottom-width: 20px;
-    border-top-width: 20px;
-    border-radius: 10px;
-    border-collapse: collapse;  
+    filter:drop-shadow(0px 0px 0px rgb(0, 250, 87)) drop-shadow(0px 0px 5px rgb(124, 236, 5));
 }
 
 
-#contactClick:focus 
+#contactClick:focus
 { 
-    border:rgb(0, 0, 0, 0);
-    border-bottom: rgba(0, 0, 0, 0.3);
-    border-style: solid;
-    border-bottom-width: 20px;
-    border-top-width: 20px;
-    border-radius: 10px;
-    border-collapse: collapse;  
- }
+    filter:drop-shadow(0px 0px 0px rgb(0, 250, 87)) drop-shadow(0px 0px 5px rgb(124, 236, 5));
+}
 
 
 
  #leaderboardClick:focus 
 { 
-    border:rgb(0, 0, 0, 0);
-    border-bottom: rgba(0, 0, 0, 0.3);
-    border-style: solid;
-    border-bottom-width: 20px;
-    border-top-width: 20px;
-    border-radius: 10px;
-    border-collapse: collapse;  
+    filter:drop-shadow(0px 0px 0px rgb(0, 250, 87)) drop-shadow(0px 0px 5px rgb(124, 236, 5));  
  }
 
 
