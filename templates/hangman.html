@@ -178,7 +178,7 @@
         submitButton.style.display = "none";
         inputElement.style.display = "none";
         wins++;
-        document.getElementById("win").innerHTML = "Score: " + wins;
+        document.getElementById("score").innerHTML = "PlayerScore: " + playerScore ;
 
     }
 
@@ -202,7 +202,7 @@
     if (/^[A-Za-z]$/.test(inputValue)) {
         inputValue = inputValue.toLowerCase();
         if (guessedLetters.includes(inputValue)) {
-        alert("You already guessed that letter.");
+            alert("You already guessed that letter.");
         return;
         } else if (wordArray.includes(inputValue)) {
             //hide reset button
@@ -215,12 +215,12 @@
         emptyWord = emptyWord.replace(/ /g, "");
         //replace underscores with letters
         for (var i = 0; i < word.length; i++) {
-        if (word[i] == inputValue) {
-            emptyWord = emptyWord.substring(0, i) + inputValue + emptyWord.substring(i + 1);
-        }
+            if (word[i] == inputValue) {
+                emptyWord = emptyWord.substring(0, i) + inputValue + emptyWord.substring(i + 1);
+            }
         }
         if (emptyWord == word) {
-        win();
+            win();
         }
         //add spaces between underscores and letters
         emptyWord = emptyWord.split("").join(" ");
@@ -231,6 +231,8 @@
         
         }
         else {
+        guessedLetters.push(inputValue);
+        document.getElementById("guessedLetters").innerHTML = "Guessed Letters: " + guessedLetters.join(", ");
         //Change the image
         state++;
         changeImage(replaceDollarSign(state));
